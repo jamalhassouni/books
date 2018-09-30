@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, FlatList } from "react-native";
 import axios from "axios";
 
 class BooksList extends Component {
@@ -19,17 +19,25 @@ class BooksList extends Component {
     });
   }
 
-  render() {
+  renderBookItem = ({ item }) => {
     return (
       <View>
-        {this.state.books.map(book => {
-          return (
-            <View>
-              <Text>{book.name}</Text>
-              <Text>{book.price}</Text>
-            </View>
-          );
-        })}
+        <Text>{item.name}</Text>
+        <Text>{item.price}</Text>
+      </View>
+    );
+  };
+
+  keyExtractor = (item, index) => index.toString();
+
+  render() {
+    return (
+      <View style={{flex:1}}>
+        <FlatList
+          data={this.state.books}
+          renderItem={this.renderBookItem}
+          keyExtractor={this.keyExtractor}
+        />
       </View>
     );
   }
