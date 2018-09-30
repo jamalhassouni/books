@@ -1,4 +1,4 @@
-package com.books;
+package com.jamalh.books;
 
 import com.facebook.react.ReactActivity;
 
