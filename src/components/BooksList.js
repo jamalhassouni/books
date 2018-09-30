@@ -20,20 +20,14 @@ class BooksList extends Component {
   }
 
   renderBookItem = ({ item }) => {
-    /* return (
-      <View>
-        <Text>{item.name}</Text>
-        <Text>{item.price}</Text>
-      </View>
-    ); */
-    return <ListItem/>
+    return <ListItem book={item} />;
   };
 
   keyExtractor = (item, index) => index.toString();
 
   render() {
     return (
-      <View style={{flex:1}}>
+      <View style={{ flex: 1 }}>
         <FlatList
           data={this.state.books}
           renderItem={this.renderBookItem}

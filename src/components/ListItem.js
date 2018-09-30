@@ -1,17 +1,16 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
-const ListItem = () => {
-  const imgUrl =
-    "https://images-na.ssl-images-amazon.com/images/I/51Gsycdh-TL._SX430_BO1,204,203,200_.jpg";
+const ListItem = (props) => {
+    const book = props.book;
   return (
     <View style={styles.listItem}>
-      <Image style={styles.bookImage} source={{ uri: imgUrl }} />
+      <Image style={styles.bookImage} source={{ uri: book.image }} />
       <View style={styles.infoContainer}>
         <View style={styles.bookInfo}>
-          <Text>Book title</Text>
-          <Text>Book price</Text>
-          <Text>Book ISBN</Text>
+          <Text>{book.name}</Text>
+          <Text>Price: {book.price}$</Text>
+          <Text>ISBN: {book.isbn}</Text>
         </View>
       </View>
 
