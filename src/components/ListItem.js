@@ -1,12 +1,13 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
+import Button from "./Button";
 
-const ListItem = (props) => {
-    const book = props.book;
+const ListItem = props => {
+  const book = props.book;
   return (
     <View style={styles.listItem}>
-      <Image style={styles.bookImage} source={{ uri: book.image }} />
       <View style={styles.infoContainer}>
+        <Image style={styles.bookImage} source={{ uri: book.image }} />
         <View style={styles.bookInfo}>
           <Text>{book.name}</Text>
           <Text>Price: {book.price}$</Text>
@@ -14,7 +15,7 @@ const ListItem = (props) => {
         </View>
       </View>
 
-      <Text> Button Here </Text>
+      <Button />
     </View>
   );
 };
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
   },
   bookInfo: {
     flexDirection: "column",
-    padding: 10,
+    paddingLeft: 10,
     justifyContent: "space-between"
   },
   bookImage: {
