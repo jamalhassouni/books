@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, Linking } from "react-native";
 import Button from "./Button";
 
 const ListItem = props => {
@@ -15,7 +15,7 @@ const ListItem = props => {
         </View>
       </View>
 
-      <Button />
+      <Button onPress={() => Linking.openURL(book.link)}>Buy Now</Button>
     </View>
   );
 };

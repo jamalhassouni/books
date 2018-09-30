@@ -7,8 +7,8 @@ import BooksList from "./BooksList";
 class App extends Component {
   render() {
     return (
-      <View style={{flex:1}}>
-        <Header />
+      <View style={{ flex: 1 }}>
+        <Header title="Books App" />
         <BooksList />
       </View>
     );
