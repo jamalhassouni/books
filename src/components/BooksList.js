@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, FlatList } from "react-native";
 import axios from "axios";
-
+import ListItem from "./ListItem";
 class BooksList extends Component {
   constructor(props) {
     super(props);
@@ -20,12 +20,13 @@ class BooksList extends Component {
   }
 
   renderBookItem = ({ item }) => {
-    return (
+    /* return (
       <View>
         <Text>{item.name}</Text>
         <Text>{item.price}</Text>
       </View>
-    );
+    ); */
+    return <ListItem/>
   };
 
   keyExtractor = (item, index) => index.toString();
